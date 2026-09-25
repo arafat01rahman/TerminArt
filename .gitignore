@@ -1,0 +1,6 @@
+*.o
+termart
+build/
+*.html
+!examples/demo.html
+.DS_Store
