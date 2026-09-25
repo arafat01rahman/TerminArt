@@ -1,7 +1,12 @@
 #include <iostream>
+#include "image.hpp"
 
-int main(int argc, char** argv) {
-    (void)argc; (void)argv;
-    std::cout << "termart v0.1\n";
-    return 0;
+int main() {
+    cv::Mat img = termart::loadImage("examples/phodo.jpg");
+
+    std::cout << "loaded "  << img.cols << "x" << img.rows << "\n";
+
+    cv::Mat small = termart::resizeForAscii(img, 80);
+
+    std::cout << "resized " << small.cols << "x" << small.rows << "\n";
 }
