@@ -28,7 +28,6 @@ exporter and captured as PNGs in [`output/`](output).
 <!-- ── Example 1 ───────────────────────────────────────────── -->
 <tr><td colspan="3"><br>
 
-### 1 · `dp.jpg`
 
 </td></tr>
 <tr>
@@ -44,7 +43,6 @@ exporter and captured as PNGs in [`output/`](output).
 <!-- ── Example 2 ───────────────────────────────────────────── -->
 <tr><td colspan="3"><br>
 
-### 2 · `im.jpg`
 
 </td></tr>
 <tr>
@@ -60,7 +58,7 @@ exporter and captured as PNGs in [`output/`](output).
 <!-- ── Example 3 ───────────────────────────────────────────── -->
 <tr><td colspan="3"><br>
 
-### 3 · `lok.jpg`
+
 
 </td></tr>
 <tr>
@@ -76,7 +74,6 @@ exporter and captured as PNGs in [`output/`](output).
 <!-- ── Example 4 ───────────────────────────────────────────── -->
 <tr><td colspan="3"><br>
 
-### 4 · `messi3.jpg`
 
 </td></tr>
 <tr>
