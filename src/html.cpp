@@ -44,19 +44,30 @@ std::string renderHtml(const cv::Mat& bgr, const std::string& palette) {
     out += kHtmlHead;
 
     for (int y = 0; y < bgr.rows; ++y) {
-        for (int x = 0; x < bgr.cols; ++x) {
+        int x = 0;
+        while (x < bgr.cols) {
             cv::Vec3b p = bgr.at<cv::Vec3b>(y, x);
             char ch = pixelToChar(p, palette);
-
+            int r = (int)p[2], g = (int)p[1], b = (int)p[0];
+            int x2 = x + 1;
+            while (x2 < bgr.cols) {
+                cv::Vec3b p2 = bgr.at<cv::Vec3b>(y, x2);
+                if (pixelToChar(p2, palette) != ch ||
+                    !(p2[2] == p[2] && p2[1] == p[1] && p2[0] == p[0]))
+                    break;
+                ++x2;
+            }
             out += "<span style=\"color:rgb(";
-            out += std::to_string((int)p[2]);  // R
+            out += std::to_string(r);
             out += ",";
-            out += std::to_string((int)p[1]);  // G
+            out += std::to_string(g);
             out += ",";
-            out += std::to_string((int)p[0]);  // B
+            out += std::to_string(b);
             out += ")\">";
-            out += escapeChar(ch);
+            for (int xi = x; xi < x2; ++xi)
+                out += escapeChar(ch);
             out += "</span>";
+            x = x2;
         }
         out += "\n";
     }

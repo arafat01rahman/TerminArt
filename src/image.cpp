@@ -30,7 +30,7 @@ namespace termart
         }
 
         cv::Mat dst;
-        cv::resize(src, dst, cv::Size(cols, rows), 0, 0, cv::INTER_AREA);
+        cv::resize(src, dst, cv::Size(cols, rows), 0, 0, cv::INTER_LINEAR);
         return dst;
     }
 
